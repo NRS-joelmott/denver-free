@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, SectionHeader, FilterRow } from './UI';
-import { concerts } from '../data';
+import { concerts } from './data/index';
 
 const GENRES = ['All Genres', 'Rock', 'Jazz', 'Country', 'Classical', 'Various'];
 const TYPES = ['All Venues', 'Outdoor', 'Parks', 'Bars', 'Plazas'];
