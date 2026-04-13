@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import EventsTab from './components/EventsTab';
-import ConcertsTab from './components/ConcertsTab';
-import ActivitiesTab from './components/ActivitiesTab';
-import HappyHoursTab from './components/HappyHoursTab';
-import FreeStuffTab from './components/FreeStuffTab';
-import AlmostFreeTab from './components/AlmostFreeTab';
+import EventsTab from './EventsTab';
+import ConcertsTab from './ConcertsTab';
+import ActivitiesTab from './ActivitiesTab';
+import HappyHoursTab from './HappyHoursTab';
+import FreeStuffTab from './FreeStuffTab';
+import AlmostFreeTab from './AlmostFreeTab';
 
 const TABS = [
   { id: 'events',      label: 'Free Events' },
-  { id: 'concerts',   label: 'Concerts'    },
-  { id: 'activities', label: 'Activities'  },
-  { id: 'happyhours', label: 'Happy Hours' },
-  { id: 'freestuff',  label: 'Free Stuff'  },
-  { id: 'almostfree', label: 'Almost Free' },
+  { id: 'concerts',    label: 'Concerts'    },
+  { id: 'activities',  label: 'Activities'  },
+  { id: 'happyhours',  label: 'Happy Hours' },
+  { id: 'freestuff',   label: 'Free Stuff'  },
+  { id: 'almostfree',  label: 'Almost Free' },
 ];
 
 export default function App() {
   const [tab, setTab] = useState('events');
 
-  // Register service worker
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
