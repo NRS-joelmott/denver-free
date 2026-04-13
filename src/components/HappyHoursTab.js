@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SectionHeader, FilterRow } from './UI';
+import { SectionHeader, FilterRow, HHThumb } from './UI';
 import { happyHours, NEIGHBORHOODS, DAYS } from '../data';
 
 export default function HappyHoursTab() {
@@ -41,9 +41,16 @@ export default function HappyHoursTab() {
         <div key={day} className="day-group">
           <div className="day-label">{day}</div>
           {items.map(h => (
-            <div key={h.id} className="card">
+            <a
+              key={h.id}
+              href={h.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card"
+              style={{ textDecoration: 'none', display: 'block' }}
+            >
               <div className="card-row">
-                <div className="card-thumb">{h.emoji}</div>
+                <HHThumb img={h.img} title={h.title} />
                 <div className="hh-body">
                   <div className="hh-title">{h.title}</div>
                   <div className="hh-hood">{h.hood}</div>
@@ -55,7 +62,7 @@ export default function HappyHoursTab() {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       ))}

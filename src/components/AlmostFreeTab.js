@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SectionHeader, FilterRow, Banner } from './UI';
+import { SectionHeader, FilterRow, Banner, HHThumb } from './UI';
 import { almostFree } from '../data';
 
 const CATS = ['All Deals', 'Food', 'Activities', 'Fitness', 'Entertainment', 'Experiences'];
@@ -27,7 +27,7 @@ export default function AlmostFreeTab() {
         body: JSON.stringify({
           model: 'claude-sonnet-4-20250514',
           max_tokens: 1000,
-          system: `You are a helpful local deals assistant for Denver, CO area. The user is in Golden, CO. You help them find amazing deals and almost-free experiences near them. Be concise, friendly, and specific. Format your response in 2-3 short sentences max. Focus on value and why it's worth it.`,
+          system: `You are a helpful local deals assistant for the Denver, CO area. The user is in Golden, CO. Help them find amazing deals and almost-free experiences nearby. Be concise and specific — 2-3 sentences max.`,
           messages: [{ role: 'user', content: aiQuery }],
         }),
       });
@@ -35,19 +35,14 @@ export default function AlmostFreeTab() {
       const text = data.content?.find(b => b.type === 'text')?.text || 'No response';
       setAiResult(text);
     } catch {
-      setAiResult('Could not connect. Check your API key in the .env file.');
+      setAiResult('Could not connect. Add your API key in Vercel environment variables.');
     }
     setAiLoading(false);
   };
 
   return (
     <div>
-      <Banner
-        variant="amber"
-        label="Almost Free"
-        title="Deals too good to pass up"
-        sub="Hyper-local offers near Golden, CO"
-      />
+      <Banner variant="amber" label="Almost Free" title="Deals too good to pass up" sub="Hyper-local offers near Golden, CO" />
 
       <div className="ai-bar">
         <input
@@ -65,12 +60,9 @@ export default function AlmostFreeTab() {
       {aiLoading && (
         <div className="ai-result">
           <div className="ai-result-label">AI is thinking</div>
-          <div className="loading-dots">
-            <span /><span /><span />
-          </div>
+          <div className="loading-dots"><span /><span /><span /></div>
         </div>
       )}
-
       {aiResult && !aiLoading && (
         <div className="ai-result">
           <div className="ai-result-label">✦ AI Recommendation</div>
@@ -86,9 +78,16 @@ export default function AlmostFreeTab() {
       )}
 
       {filtered.map(a => (
-        <div key={a.id} className="card">
+        <a
+          key={a.id}
+          href={a.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card"
+          style={{ textDecoration: 'none', display: 'block' }}
+        >
           <div className="card-row">
-            <div className="card-thumb">{a.emoji}</div>
+            <HHThumb img={a.img} title={a.title} />
             <div className="almost-body">
               <div className="almost-title">{a.title}</div>
               <div className="almost-sub">{a.venue} · {a.dist} · {a.detail}</div>
@@ -99,7 +98,7 @@ export default function AlmostFreeTab() {
               </div>
             </div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   );

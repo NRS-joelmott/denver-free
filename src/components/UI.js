@@ -1,26 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export function Card({ emoji, title, sub, tags = [], right, children }) {
-  return (
-    <div className="card">
-      <div className="card-row">
-        <div className="card-thumb">{emoji}</div>
-        <div className="card-body">
-          <div className="card-title">{title}</div>
-          {sub && <div className="card-sub">{sub}</div>}
-          {tags.length > 0 && (
-            <div className="card-tags">
-              {tags.map((t, i) => (
-                <span key={i} className={`tag ${t.color}`}>{t.label}</span>
-              ))}
-            </div>
-          )}
-          {children}
-        </div>
-        {right && <div className="card-right">{right}</div>}
+function Thumb({ img, emoji, title }) {
+  const [err, setErr] = useState(false);
+  if (img && !err) {
+    return (
+      <div className="card-thumb" style={{ padding: 0, overflow: 'hidden' }}>
+        <img
+          src={img}
+          alt={title}
+          onError={() => setErr(true)}
+          style={{ width: '78px', height: '78px', objectFit: 'cover', display: 'block' }}
+        />
       </div>
+    );
+  }
+  return <div className="card-thumb">{emoji || '📍'}</div>;
+}
+
+export function Card({ img, emoji, title, sub, tags = [], right, url, children }) {
+  const inner = (
+    <div className="card-row">
+      <Thumb img={img} emoji={emoji} title={title} />
+      <div className="card-body">
+        <div className="card-title">{title}</div>
+        {sub && <div className="card-sub">{sub}</div>}
+        {tags.length > 0 && (
+          <div className="card-tags">
+            {tags.map((t, i) => (
+              <span key={i} className={`tag ${t.color}`}>{t.label}</span>
+            ))}
+          </div>
+        )}
+        {children}
+      </div>
+      {right && <div className="card-right">{right}</div>}
     </div>
   );
+
+  if (url) {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="card"
+        style={{ textDecoration: 'none', display: 'block' }}
+      >
+        {inner}
+      </a>
+    );
+  }
+  return <div className="card">{inner}</div>;
 }
 
 export function SectionHeader({ title, count }) {
@@ -56,4 +86,21 @@ export function Banner({ variant = 'purple', label, title, sub }) {
       {sub && <div className="banner-sub">{sub}</div>}
     </div>
   );
+}
+
+export function HHThumb({ img, title }) {
+  const [err, setErr] = useState(false);
+  if (img && !err) {
+    return (
+      <div className="card-thumb" style={{ padding: 0, overflow: 'hidden', flexShrink: 0 }}>
+        <img
+          src={img}
+          alt={title}
+          onError={() => setErr(true)}
+          style={{ width: '78px', height: '100%', minHeight: '78px', objectFit: 'cover', display: 'block' }}
+        />
+      </div>
+    );
+  }
+  return <div className="card-thumb">🍺</div>;
 }
