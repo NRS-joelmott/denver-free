@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, SectionHeader, FilterRow, Banner } from './UI';
-import { events } from '../data';
+import { events } from './data/index';
 
 const CATS = ['All', 'Today', 'This Weekend', 'Outdoors', 'Family', 'Arts'];
 const tagMap = { 'Tonight': 'tag-red', 'This weekend': 'tag-purple', 'Outdoors': 'tag-teal', 'Family': 'tag-blue', 'Arts': 'tag-amber' };
