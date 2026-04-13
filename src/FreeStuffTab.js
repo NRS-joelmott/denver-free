@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, SectionHeader, FilterRow, Banner } from './UI';
-import { freeStuff } from '../data';
+import { freeStuff } from './data/index';
 
 const CATS = ['All', 'Food & Drink', 'With Purchase', 'Grand Openings', 'App Promos', 'Samples'];
 
