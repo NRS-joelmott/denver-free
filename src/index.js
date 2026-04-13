@@ -1,6 +1,94 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+export const NEIGHBORHOODS = [
+  'All Areas', 'Golden', 'Downtown', 'Capitol Hill',
+  'LoDo', 'RiNo', 'Highlands', 'Wash Park', 'Arvada', 'Lakewood', 'Colfax', 'Berkeley'
+];
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<React.StrictMode><App /></React.StrictMode>);
+export const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+export const events = [
+  { id: 1, title: 'Cherry Creek Arts Festival', venue: 'Cherry Creek North', day: 'Sat–Sun', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=80', tags: ['This weekend', 'Outdoors'], dist: '4.2 mi', category: 'Arts', url: 'https://www.cherrycreekartsfestival.org' },
+  { id: 2, title: 'Civic Center Park Movie Night', venue: 'Downtown Denver', day: 'Friday 8pm', img: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=200&q=80', tags: ['Tonight', 'Outdoors'], dist: '14.8 mi', category: 'Outdoors', url: 'https://www.denvergov.org' },
+  { id: 3, title: 'Golden Farmers Market', venue: 'Downtown Golden', day: 'Saturday 8am', img: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=200&q=80', tags: ['This weekend', 'Family'], dist: '0.8 mi', category: 'Family', url: 'https://www.downtowngolden.com/events/farmers-market/' },
+  { id: 4, title: 'Denver Art Museum Free Day', venue: 'Golden Triangle', day: 'First Sunday', img: 'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=200&q=80', tags: ['Arts'], dist: '12.1 mi', category: 'Arts', url: 'https://www.denverartmuseum.org/visit/hours-admission' },
+  { id: 5, title: 'The Golden Mill Live Music', venue: 'Golden Mill, 1012 Ford St', day: 'Sun Apr 13, 5–8pm', img: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=200&q=80', tags: ['Tonight', 'Outdoors'], dist: '1.1 mi', category: 'Arts', url: 'https://www.thegoldenmill.com' },
+  { id: 6, title: 'Denver Botanic Gardens Free Day', venue: 'York Street', day: 'Select Saturdays', img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=200&q=80', tags: ['Family', 'Outdoors'], dist: '11.0 mi', category: 'Outdoors', url: 'https://www.botanicgardens.org/york-street/plan-your-visit/free-discount-admission' },
+];
+
+export const concerts = [
+  { id: 1, title: 'Civic Center Summer Concert Series', venue: 'Civic Center Park', day: 'Fri 7pm', img: 'https://images.unsplash.com/photo-1501386761578-eaa54b498b03?w=200&q=80', genre: 'Rock', type: 'Outdoor', tags: ['Tonight'], dist: '14.8 mi', url: 'https://www.denver.org/things-to-do/arts-culture/music/' },
+  { id: 2, title: 'Jazz in the Park', venue: 'City Park', day: 'Sat 2–5pm', img: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=200&q=80', genre: 'Jazz', type: 'Parks', tags: ['This Sat'], dist: '11.3 mi', url: 'https://www.jazzinthepark.org' },
+  { id: 3, title: 'Colorado Symphony Pop-Up', venue: 'Union Station Plaza', day: 'Sun 1pm', img: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=200&q=80', genre: 'Classical', type: 'Plazas', tags: [], dist: '13.5 mi', url: 'https://www.coloradosymphony.org' },
+  { id: 4, title: 'Open Mic Night — Tennyson Block', venue: 'Berkeley', day: 'Thu 8pm · Weekly', img: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=200&q=80', genre: 'Various', type: 'Bars', tags: ['Weekly'], dist: '9.2 mi', url: 'https://shoptennyson.com' },
+  { id: 5, title: 'Bluegrass on the Rocks', venue: 'Downtown Golden', day: 'Sat 3pm', img: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&q=80', genre: 'Country', type: 'Outdoor', tags: ['This Sat'], dist: '1.8 mi', url: 'https://www.visitgolden.com/events' },
+  { id: 6, title: 'Great Divide Live Music Saturdays', venue: 'RiNo', day: 'Sat · Most weeks', img: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=200&q=80', genre: 'Various', type: 'Bars', tags: ['Weekly'], dist: '13.1 mi', url: 'https://www.greatdivide.com/taproom' },
+  { id: 7, title: 'Golden Mill Trivia Night', venue: 'The Golden Mill', day: 'Tue 6:30–8:30pm', img: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=200&q=80', genre: 'Various', type: 'Bars', tags: ['Weekly'], dist: '1.1 mi', url: 'https://www.thegoldenmill.com' },
+];
+
+export const activities = [
+  { id: 1, title: 'Free Outdoor Yoga — Splash Point', venue: 'Golden', day: 'Sat & Sun 8am', img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=200&q=80', tags: ['Instructor-led', 'Weekly'], category: 'Fitness', dist: '0.7 mi', url: 'https://www.cityofgolden.net/play/parks-recreation/' },
+  { id: 2, title: 'Intro Watercolor Workshop', venue: 'Lakewood Arts Center', day: 'Sat 10am', img: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&q=80', tags: ['Supplies incl.', 'New series'], category: 'Arts & Craft', dist: '4.1 mi', url: 'https://www.lakewood.org/arts' },
+  { id: 3, title: 'CrossFit Golden — Free Community WOD', venue: 'Golden', day: 'Every Sat 9am', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=200&q=80', tags: ['Instructor-led', 'All levels'], category: 'Fitness', dist: '1.3 mi', url: 'https://www.crossfitgolden.com' },
+  { id: 4, title: 'Sur La Table — Free Knife Skills Demo', venue: 'Cherry Creek', day: 'Sun 1pm', img: 'https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?w=200&q=80', tags: ['Chef-led'], category: 'Cooking', dist: '8.2 mi', url: 'https://www.surlatable.com/cooking-classes' },
+  { id: 5, title: 'Google — Free AI Tools Workshop', venue: 'Denver Central Library', day: 'Thu 6pm', img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=200&q=80', tags: ['Instructor-led', 'New'], category: 'Tech & Skills', dist: '13.4 mi', url: 'https://www.denverlibrary.org/events' },
+  { id: 6, title: 'Gracie Jiu-Jitsu — Free Intro Class', venue: 'Arvada', day: 'Ongoing · First class free', img: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?w=200&q=80', tags: ['First class'], category: 'Fitness', dist: '5.6 mi', url: 'https://www.graciearvada.com' },
+  { id: 7, title: 'Guitar Center — Free Group Lesson', venue: 'Westminster', day: 'Sat 11am', img: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=200&q=80', tags: ['Instructor-led'], category: 'Arts & Craft', dist: '7.8 mi', url: 'https://www.guitarcenter.com/lessons' },
+  { id: 8, title: 'CSU Extension — Free Gardening Clinic', venue: 'Golden', day: 'Wed 5:30pm · Weekly', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=200&q=80', tags: ['Expert-led', 'Weekly'], category: 'Wellness', dist: '0.9 mi', url: 'https://jefferson.extension.colostate.edu' },
+  { id: 9, title: 'REI — Free Gear & Skills Clinic', venue: 'Lakewood', day: 'Sat 10am', img: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=200&q=80', tags: ['Expert-led'], category: 'Tech & Skills', dist: '4.8 mi', url: 'https://www.rei.com/events' },
+  { id: 10, title: 'Shambhala Meditation Drop-In', venue: 'Capitol Hill', day: 'Sun 10am · Weekly', img: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=200&q=80', tags: ['Instructor-led', 'Weekly'], category: 'Wellness', dist: '12.0 mi', url: 'https://denver.shambhala.org' },
+];
+
+export const happyHours = [
+  // GOLDEN
+  { id: 1,  title: 'Vice Kitchen Wine & Whiskey', hood: 'Golden', day: 'Tuesday',   time: 'Tue–Sun · Happy hour drinks menu', img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&q=80', deals: ['$2 off wells', '$2 off draft beer & wine', 'Rocky Mountain cuisine', 'Fire pit patio'], url: 'https://www.vicekitchenwinewhiskey.com' },
+  { id: 2,  title: 'Atomic Cowboy / Fat Sully\'s', hood: 'Golden',  day: 'Monday',   time: '3–6pm · Daily',                    img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&q=80', deals: ['$2 PBRs', '$3 well drinks', '$4 beers & wines', '$5 Jim Beam & Hornitos'], url: 'https://www.theatomiccowboy.com' },
+  { id: 3,  title: 'Golden City Brewery',          hood: 'Golden',  day: 'Thursday',  time: '4–7pm · Thu–Sat',                  img: 'https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=200&q=80', deals: ['$4 pints', '$2 off flights', 'Backyard patio'], url: 'https://www.goldencitybrewery.com' },
+  { id: 4,  title: 'The Golden Mill',               hood: 'Golden',  day: 'Sunday',    time: '3–6pm · Daily',                    img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=200&q=80', deals: ['$1 off all drafts', '$5 wells', '50+ self-pour taps', 'Creek-side patio'], url: 'https://www.thegoldenmill.com' },
+  { id: 5,  title: 'Tributary Food Hall',           hood: 'Golden',  day: 'Wednesday', time: 'Daily specials',                    img: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&q=80', deals: ['$1 off Coors', '$5 wells', '$8 house wine', '$7 margarita'], url: 'https://www.tributarygolden.com' },
+  { id: 6,  title: 'Trailhead Taphouse & Kitchen',  hood: 'Golden',  day: 'Monday',    time: 'Daily happy hour',                 img: 'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=200&q=80', deals: ['$2 off appetizers', 'Draft specials', 'Dog-friendly patio'], url: 'https://www.trailheadtaphouse.com' },
+  { id: 7,  title: 'Table Mountain Grill & Cantina',hood: 'Golden',  day: 'Tuesday',   time: '4–6:30pm · Daily',                 img: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=200&q=80', deals: ['$3.69 house margarita', '$2.99 Coors Light draft', '$3.49 Dos Equis'], url: 'https://www.tablemountaingrill.com' },
+  // DOWNTOWN
+  { id: 8,  title: 'Guard & Grace',                 hood: 'Downtown',day: 'Monday',   time: '4:30–6:30pm · Mon–Fri · Bar only', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=200&q=80', deals: ['$10 cocktails (reg $16+)', 'Half-price oysters', 'Best upscale HH in Denver'], url: 'https://www.guardandgrace.com' },
+  { id: 9,  title: 'The Corner Office',              hood: 'Downtown',day: 'Monday',   time: '4–6pm · Mon–Thu',                  img: 'https://images.unsplash.com/photo-1560053608-13721e0d1f15?w=200&q=80', deals: ['$5 cocktails', 'Half-off appetizers'], url: 'https://www.thecornerofficebar.com' },
+  { id: 10, title: 'Cooper Lounge — Union Station',  hood: 'Downtown',day: 'Wednesday',time: '4–7pm · Daily',                    img: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=200&q=80', deals: ['Craft cocktail specials', 'Wine & beer deals', 'Historic Union Station setting'], url: 'https://www.cooperlounge.com' },
+  // LODO
+  { id: 11, title: 'Rioja',                          hood: 'LoDo',    day: 'Wednesday', time: '4–6:30pm · Mon–Wed',               img: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=200&q=80', deals: ['$6 wine', '$7 craft beer', '$5 bites'], url: 'https://www.riojadenver.com' },
+  { id: 12, title: 'Avanti Food & Beverage',         hood: 'LoDo',    day: 'Friday',    time: '3–6pm · Mon–Fri',                  img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=200&q=80', deals: ['$4 drafts', '$6 wine', '$5 shots', 'Rooftop + patio'], url: 'https://www.avanti.net' },
+  // RINO
+  { id: 13, title: 'Great Divide Brewing Taproom',   hood: 'RiNo',    day: 'Tuesday',   time: '3–6pm Mon–Fri · 2–4pm Sat',        img: 'https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=200&q=80', deals: ['$3 pints', '$1 off all beer', '$5 flights', 'Live music most Saturdays'], url: 'https://www.greatdivide.com/taproom' },
+  { id: 14, title: 'Our Mutual Friend Brewing',      hood: 'RiNo',    day: 'Tuesday',   time: '4–7pm · Tue–Fri',                  img: 'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=200&q=80', deals: ['$4 pints', '$1 off growler fills'], url: 'https://www.omfbeer.com' },
+  { id: 15, title: "Biju's Little Curry Shop",       hood: 'RiNo',    day: 'Friday',    time: '3–6pm · Daily',                    img: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=200&q=80', deals: ['$3.50 craft drafts', 'House wine pours', 'Rotating food specials'], url: 'https://www.bijuscurryshop.com' },
+  // HIGHLANDS
+  { id: 16, title: 'Linger',                         hood: 'Highlands',day: 'Tuesday',  time: '3–5pm · Mon–Fri',                  img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&q=80', deals: ['$6 wine', '$8 cocktails', '$5 small plates', 'Rooftop views'], url: 'https://www.lingerdenver.com' },
+  // CAPITOL HILL
+  { id: 17, title: 'Williams & Graham',              hood: 'Capitol Hill',day: 'Wednesday',time: '5–7pm · Wed only',              img: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=200&q=80', deals: ['$7 whiskey cocktails', '$9 specialty cocktails', 'Speakeasy setting'], url: 'https://www.williamsandgraham.com' },
+  // WASH PARK
+  { id: 18, title: 'Wash Perk',                      hood: 'Wash Park',day: 'Thursday', time: '3–6pm · Thu–Fri',                  img: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=200&q=80', deals: ['$4 tacos', '$5 margaritas', 'Patio seating'], url: 'https://www.washparkdenver.com' },
+  // COLFAX / BERKELEY
+  { id: 19, title: 'Atomic Cowboy — Colfax',         hood: 'Colfax',  day: 'Monday',    time: '3–6pm · Daily',                    img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&q=80', deals: ['$2 PBRs', '$3 wells', '$4 beers & wines', 'Trivia nights weekly'], url: 'https://www.theatomiccowboy.com' },
+  { id: 20, title: "Fat Sully's — Tennyson",         hood: 'Berkeley', day: 'Monday',   time: '3–6pm · Daily',                    img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&q=80', deals: ['$2 PBRs', '$3 wells', '$4 beers & wines', '$5 Jim Beam'], url: 'https://www.theatomiccowboy.com' },
+  { id: 21, title: 'Hops & Pie',                     hood: 'Berkeley', day: 'Tuesday',  time: '3–6:30pm · Tue–Fri',               img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=200&q=80', deals: ['$1 off draft beers', '$2 off cans', '$1 off slices'], url: 'https://www.hopsandpie.com' },
+  { id: 22, title: 'Block & Larder',                 hood: 'Berkeley', day: 'Tuesday',  time: '3–6pm · Tue–Sun',                  img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&q=80', deals: ['$2 select oysters', '$4.50 craft drafts', '$5 cocktails & prosecco'], url: 'https://www.blockandlarder.com' },
+  { id: 23, title: 'Tap Fourteen',                   hood: 'Downtown', day: 'Saturday', time: '12–4pm · Sat–Sun',                 img: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=200&q=80', deals: ['$4 pints', '$2 off flights', 'Weekend brunch HH'], url: 'https://www.tapfourteen.com' },
+];
+
+export const freeStuff = [
+  { id: 1, title: 'Chipotle — Free burrito for new app users', venue: 'Golden · 1.1 mi', category: 'App Promos', img: 'https://images.unsplash.com/photo-1618897996318-5a901fa6ca71?w=200&q=80', detail: 'Download app + first order', urgency: 'Limited time', dist: '1.1 mi', url: 'https://www.chipotle.com/chipotle-rewards' },
+  { id: 2, title: 'Mod Pizza — Buy one, get one free', venue: 'Arvada · 3.8 mi', category: 'With Purchase', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80', detail: 'BOGO this week only', urgency: 'This week', dist: '3.8 mi', url: 'https://www.modpizza.com' },
+  { id: 3, title: 'Dutch Bros — Free drink, grand opening', venue: 'Lakewood · 4.2 mi', category: 'Grand Openings', img: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80', detail: 'New location opening day', urgency: 'Sat only', dist: '4.2 mi', url: 'https://www.dutchbros.com' },
+  { id: 4, title: 'Ulta — Free skincare sample kit', venue: 'Lakewood · 4.4 mi', category: 'With Purchase', img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=200&q=80', detail: '$35+ purchase · While supplies last', urgency: null, dist: '4.4 mi', url: 'https://www.ulta.com' },
+  { id: 5, title: 'Blank Canvas Brewery — Free growler fill', venue: 'Lakewood · 5.1 mi', category: 'App Promos', img: 'https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=200&q=80', detail: 'New loyalty sign-up', urgency: null, dist: '5.1 mi', url: 'https://www.blankcanvasbrewery.com' },
+  { id: 6, title: 'IHOP — Free short stack, birthday month', venue: 'Wheat Ridge · 6.2 mi', category: 'Food & Drink', img: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&q=80', detail: 'No purchase needed', urgency: null, dist: '6.2 mi', url: 'https://www.ihop.com/en/rewards' },
+  { id: 7, title: 'Planet Fitness — Free day pass', venue: 'Arvada · 4.9 mi', category: 'Samples', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=200&q=80', detail: 'No commitment · Walk in', urgency: 'Limited time', dist: '4.9 mi', url: 'https://www.planetfitness.com/free-pass' },
+  { id: 8, title: 'Sephora — Birthday gift bag', venue: 'Cherry Creek · 8.1 mi', category: 'Food & Drink', img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=200&q=80', detail: 'Birthday month · Beauty Insider required', urgency: null, dist: '8.1 mi', url: 'https://www.sephora.com/beauty/birthday-gift' },
+];
+
+export const almostFree = [
+  { id: 1, title: 'Bowlero Arvada — 2 Games + Shoes', venue: 'Arvada', dist: '4.1 mi', detail: 'Weekday only', img: 'https://images.unsplash.com/photo-1545090268-b9c99617cde6?w=200&q=80', was: 28, now: 8, category: 'Activities', url: 'https://www.bowlero.com/location/bowlero-arvada' },
+  { id: 2, title: "Beau Jo's Mountain Pizza — Large Pie", venue: 'Golden', dist: '1.2 mi', detail: 'Mon–Wed lunch', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80', was: 22, now: 9, category: 'Food', url: 'https://www.beaujos.com' },
+  { id: 3, title: 'CorePower Yoga — Week Unlimited', venue: 'Lakewood', dist: '3.8 mi', detail: 'New students only', img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=200&q=80', was: 75, now: 1, category: 'Fitness', url: 'https://www.corepoweryoga.com/free-week' },
+  { id: 4, title: 'Alamo Drafthouse — Tues Matinee', venue: 'Denver', dist: '13 mi', detail: 'Every Tuesday', img: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=200&q=80', was: 19, now: 5, category: 'Entertainment', url: 'https://drafthouse.com/denver' },
+  { id: 5, title: 'Rec Center Day Pass — Golden', venue: 'Golden', dist: '0.9 mi', detail: 'Pool + gym', img: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=200&q=80', was: 12, now: 3, category: 'Fitness', url: 'https://www.cityofgolden.net/play/parks-recreation/recreation-center/' },
+  { id: 6, title: 'Top Golf — Hour of Play', venue: 'Centennial', dist: '22 mi', detail: 'Weekday AM', img: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=200&q=80', was: 45, now: 12, category: 'Activities', url: 'https://topgolf.com/us/centennial/' },
+  { id: 7, title: 'Punch Bowl Social — 2hr Bowling', venue: 'Denver', dist: '14 mi', detail: 'Mon–Thu before 6pm', img: 'https://images.unsplash.com/photo-1545090268-b9c99617cde6?w=200&q=80', was: 35, now: 10, category: 'Entertainment', url: 'https://www.punchbowlsocial.com/location/denver/' },
+  { id: 8, title: 'Denver Museum of Nature & Science', venue: 'Denver', dist: '11.2 mi', detail: 'First Sunday of month', img: 'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=200&q=80', was: 22, now: 4, category: 'Experiences', url: 'https://www.dmns.org/visit/hours-admission/free-and-reduced-admission/' },
+];
