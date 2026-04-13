@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, SectionHeader, FilterRow, Banner } from './UI';
-import { activities } from '../data';
+import { activities } from './data/index';
 
 const CATS = ['All', 'Fitness', 'Arts & Craft', 'Cooking', 'Tech & Skills', 'Wellness'];
 const tagColor = { 'Instructor-led': 'tag-purple', 'Expert-led': 'tag-purple', 'Chef-led': 'tag-amber', 'Weekly': 'tag-teal', 'New series': 'tag-teal', 'New': 'tag-teal', 'Supplies incl.': 'tag-amber', 'All levels': 'tag-blue', 'First class': 'tag-green' };
